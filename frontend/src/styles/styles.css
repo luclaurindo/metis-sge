@@ -1,0 +1,302 @@
+/* =========================
+    BASE
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+/* =========================
+   HEADER (TOPO)
+========================= */
+header {
+    width: 100%;
+    height: 236px;
+    background: linear-gradient(to left, #5B9BD5 0%, #006298 83%);
+    position: relative;
+}
+
+header .topo-conteudo {
+    max-width: 1037px;
+    margin: 0 auto;
+    padding: 25px 1px;
+    color: white;
+    text-align: center;
+}
+
+header .topo-conteudo h1 {
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+/* =========================
+   SAUDAÇÃO
+========================= */
+.saudacao-container {
+    max-width: 1033px;
+    margin: 0px 307px;
+    padding: 0 15px;
+}
+
+.saudacao-container h2 {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+/* =========================
+   BLOCO SOBREPOSTO
+========================= */
+.bloco-sobreposto {
+    max-width: 1312px;
+    margin: -100px auto 50px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.bloco-sobreposto:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================
+   MENU GRID DE CARDS
+========================= */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-menu img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 15px;
+}
+
+.card-menu h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.card-menu p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.card-menu:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   CONTEÚDO INTERNO
+========================= */
+.conteudo {
+    margin-top: -7px;
+}
+
+/* =========================
+   LINKS
+========================= */
+a {
+    color: #008542;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   MODAL
+========================= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+}
+
+.modal-form {
+    display: grid;
+    gap: 10px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* =========================
+   PÁGINAS MODULARES (PGN, AGN, APSP, MI)
+========================= */
+
+/* Container do módulo (substitui bloco-sobreposto apenas se necessário) */
+.module-content {
+    max-width: 1312px;
+    margin: -50px auto 50px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+/* Botões de ação das páginas modulares */
+.acoes {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.acoes button {
+    background: #006298;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.acoes button:hover {
+    background: #015e2b;
+}
+
+/* Mensagem de sucesso */
+.msg-success {
+    color: #017037;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+/* Galeria (tabela) */
+.gallery {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+.gallery th,
+.gallery td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.gallery tr:hover {
+    background-color: #dbeafe;
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 768px) {
+    .acoes {
+        flex-wrap: wrap;
+    }
+
+    .acoes button {
+        flex: 1 1 calc(50% - 10px);
+    }
+
+    .gallery th,
+    .gallery td {
+        padding: 8px;
+    }
+}
+
+/* =========================
+   FILTROS DE BUSCA
+========================= */
+.filter-bar {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+    align-items: center;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 25px;
+    border: 1px solid #d1d5db;
+    outline: none;
+    font-size: 14px;
+}
+
+.btn-filter,
+.btn-clear {
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: none;
+    background: #e5e7eb;
+    cursor: pointer;
+}
+
+.filter-advanced {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 12px;
+    background: #f9fafb;
+}
+
+.gallery th {
+    cursor: pointer;
+    position: relative;
+}
+
+.gallery th input {
+    width: 100%;
+    padding: 4px;
+    font-size: 12px;
+}
